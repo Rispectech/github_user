@@ -115,7 +115,7 @@ const Repos = () => {
 
   return (
     <section className="section">
-      <Wrapper className="updated-section-center">
+      <Wrapper className="updated-section-center shadow">
         <Pie3D data={mostlyUsed} />
         <Column3D data={stars} />
         <Doughnut2D data={mostlyUsed_doughnut} />

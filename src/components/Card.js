@@ -94,6 +94,7 @@ const Wrapper = styled.article`
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   position: relative;
+  box-shadow: 0 20px 40px -14px var(--card-color);
   &::before {
     content: "user";
     position: absolute;

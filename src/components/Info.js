@@ -53,7 +53,7 @@ const UserInfo = () => {
 
 const Item = ({ label, icon, value, style }) => {
   return (
-    <article className="item">
+    <article className="item shadow">
       <span className={style}>{icon}</span>
       <div>
         <h3>{value}</h3>

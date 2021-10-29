@@ -17,10 +17,10 @@ const Search = () => {
 
   return (
     <section className="section">
+      <ErrorWrapper className="section-center">
+        <p>{error.msg}</p>
+      </ErrorWrapper>
       <Wrapper className="section-center">
-        <ErrorWrapper>
-          <p>{error.msg}</p>
-        </ErrorWrapper>
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <MdSearch></MdSearch>
@@ -109,14 +109,13 @@ const Wrapper = styled.div`
   }
 `;
 const ErrorWrapper = styled.article`
-  position: absolute;
-  width: 50vw;
-  top: 0;
-  left: 0;
-  transform: translateY(-100%);
+  text-align: center;
   text-transform: capitalize;
+  margin: 1rem auto;
   p {
-    color: red;
+    margin: 0rem auto;
+    color: #721c24;
+    background: #f8d7da;
     letter-spacing: var(--spacing);
   }
 `;

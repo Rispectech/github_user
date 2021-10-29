@@ -245,3 +245,7 @@ p {
 .card-gradient {
   background: var(--card-gradient);
 }
+
+.shadow {
+  box-shadow: 0 20px 40px -14px var(--card-color);
+}

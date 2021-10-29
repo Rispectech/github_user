@@ -184,7 +184,7 @@ const UserRepoSection = () => {
   }, []);
   return (
     <UserRepoSectionWrapper className="section">
-      <section className="container">
+      <section className="container shadow">
         <header>
           <h3 className="container-heading">Top repoes</h3>
           <h5>by</h5>

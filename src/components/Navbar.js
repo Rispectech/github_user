@@ -8,7 +8,7 @@ const Navbar = () => {
   const isUser = isAuthenticated;
   // console.log(user);
   return (
-    <Wrapper>
+    <Wrapper className="shadow">
       {isUser && user.picture && <img src={user.picture} alt={user.name} />}
       {isUser && user.name && (
         <strong>Welcome! {user.name.toUpperCase()}</strong>
@@ -27,7 +27,8 @@ const Navbar = () => {
 
 const Wrapper = styled.nav`
   padding: 1.5rem;
-  background: var(--clr-white);
+  background: var(--card-background);
+  color: var(--card-color);
   text-align: center;
   display: grid;
   grid-template-columns: auto auto 100px;
@@ -50,8 +51,13 @@ const Wrapper = styled.nav`
     font-size: 1.2rem;
     text-transform: capitalize;
     letter-spacing: var(--spacing);
-    color: var(--clr-grey-5);
+    color: var(--clr-primary-5);
     cursor: pointer;
+    transition: var(--transition);
+    &:hover {
+      background: var(--clr-primary-5);
+      color: var(--clr-white);
+    }
   }
 `;
 

@@ -6,10 +6,9 @@ import styled from "styled-components";
 const UserWrapper = styled.section`
   display: flex;
   flex-direction: row;
-  gap: 18rem;
   width: 80%;
   margin: 4rem auto;
-  justify-content: center;
+  justify-content: space-between;
 
   @media all and (max-width: 1160px) {
     flex-direction: column;
@@ -19,7 +18,7 @@ const UserWrapper = styled.section`
 
 const UserInfoCard = () => {
   return (
-    <UserWrapper>
+    <UserWrapper className="section-center">
       <Card />
       <Followers />
     </UserWrapper>

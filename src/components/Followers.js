@@ -32,6 +32,7 @@ const Wrapper = styled.article`
   border-bottom-right-radius: var(--radius);
   position: relative;
   color: #f6f8fa;
+  box-shadow: 0 20px 40px -14px var(--card-color);
 
   &::before {
     content: " followers";
