@@ -21,7 +21,9 @@ const Card = () => {
         <img src={avatar_url} alt={name} />
         <div>
           <h3>{name}</h3>
-          <p>@{twitter_username || "john doe"}</p>
+          {twitter_username && (
+            <p>@{twitter_username || "Username not specified"}</p>
+          )}
         </div>
         <a href={html_url}>follow</a>
       </header>
@@ -33,12 +35,14 @@ const Card = () => {
         </p>
         <p>
           <MdLocationOn></MdLocationOn>
-          {location}
+          {location || "Location Not Specified"}
         </p>
-        <a href={`https://${blog}`}>
-          <MdLink />
-          {blog || ""}
-        </a>
+        {blog && (
+          <a href={`https://${blog}`}>
+            <MdLink />
+            {blog || "No link provided"}
+          </a>
+        )}
       </div>
     </Wrapper>
   );
@@ -160,6 +164,14 @@ const Wrapper = styled.article`
       }
       &:hover {
         color: var(--clr-primary-3);
+      }
+    }
+  }
+  @media all and (max-width: 450px) {
+    header {
+      img {
+        width: 80px;
+        hieght: 80px;
       }
     }
   }

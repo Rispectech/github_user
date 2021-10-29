@@ -1,9 +1,6 @@
-## Starter Project
+## Project
 
-- css provided (global styles, styled components)
-- folders/files already setup
-- all imports included (warnings)
-- index.js for easier imports
+- Github search projects made using react and many more
 
 ## Styled Components
 
