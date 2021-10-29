@@ -121,6 +121,9 @@ const UserRepoSectionWrapper = styled.section`
       h5 {
         display: none;
       }
+      header div button {
+        width: 4rem;
+      }
     }
   }
 `;
