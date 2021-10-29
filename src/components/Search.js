@@ -28,6 +28,7 @@ const Search = () => {
               type="text"
               placeholder="Enter Github User"
               onChange={(e) => setSearch(e.target.value)}
+              value={search}
             />
             {request > 0 && loading === false ? <button>Search</button> : null}
           </div>

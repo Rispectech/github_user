@@ -49,16 +49,14 @@ const Wrapper = styled.article`
     font-size: 1rem;
   }
   .followers {
-    overflow-y: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
     transition: var(--transition);
     height: 20rem;
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
     gap: 0rem 1rem;
     padding: 1rem 0rem;
-    &:hover {
-      overflow-y: scroll;
-    }
   }
   article {
     transition: var(--transition-updated);

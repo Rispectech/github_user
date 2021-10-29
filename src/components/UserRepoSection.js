@@ -116,6 +116,12 @@ const UserRepoSectionWrapper = styled.section`
       background: var(--clr-primary-5);
       color: var(--clr-primary-10);
     }
+    @media all and (max-width: 670px) {
+      header h3,
+      h5 {
+        display: none;
+      }
+    }
   }
 `;
 

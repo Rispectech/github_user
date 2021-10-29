@@ -44,6 +44,9 @@ const Card = () => {
           </a>
         )}
       </div>
+      <a href={html_url} className="mobile-btn">
+        follow
+      </a>
     </Wrapper>
   );
 };
@@ -83,10 +86,10 @@ const Card = () => {
 //   );
 // };
 const Wrapper = styled.article`
-  height: 20rem;
+  height: auto;
   color: #f6f8fa;
   background: #24292e;
-  padding: 1.5rem 2rem;
+  padding: 2rem 1.5rem 1rem;
   border-top-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
@@ -117,6 +120,7 @@ const Wrapper = styled.article`
       height: 120px;
       border-radius: 50%;
       border: 0.1rem solid #0070f3;
+      transition: var(--transition);
     }
     h3 {
       margin-bottom: 0.25rem;
@@ -167,12 +171,41 @@ const Wrapper = styled.article`
       }
     }
   }
+  .mobile-btn {
+    color: var(--clr-primary-5);
+    border: 2px solid var(--clr-primary-5);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+    cursor: pointer;
+    width: 70%;
+    margin: 1rem auto;
+    text-align: center;
+    &:hover {
+      background: var(--clr-primary-5);
+      color: var(--clr-white);
+    }
+    display: none;
+  }
   @media all and (max-width: 450px) {
+    padding: 1rem;
     header {
+      grid-template-column: auto 1fr;
       img {
         width: 80px;
-        hieght: 80px;
+        height: 80px;
       }
+      h3 {
+        font-size: 20px;
+      }
+      a {
+        display: none;
+      }
+    }
+    .mobile-btn {
+      display: block;
     }
   }
 `;

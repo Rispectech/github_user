@@ -10,6 +10,7 @@ const UserReposWrapper = styled.article`
   margin: 1rem;
   height: 12rem;
   border-radius: var(--radius);
+  cursor: pointer;
   .User-container {
     font-family: SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console,
       Monaco, monospace;
@@ -81,7 +82,9 @@ const UserRepos = ({
 }) => {
   // console.log(name, description, language, stargazers_count, forks, size);
   return (
-    <UserReposWrapper>
+    <UserReposWrapper
+      onClick={() => (window.location.href = "http://www.w3schools.com")}
+    >
       <div className="User-container">
         <div className="User-header">
           <GoRepo className="heading-icon" />
