@@ -1,0 +1,1 @@
+ grid-template-rows: repeat(auto-fill, minmax(45px, 1fr));

@@ -1,67 +1,67 @@
-import React from 'react'
-import { GithubContext } from '../context/context'
-import styled from 'styled-components'
-import { GoRepo, GoGist } from 'react-icons/go'
-import { FiUsers, FiUserPlus } from 'react-icons/fi'
+import React from "react";
+import { GithubContext } from "../context/context";
+import styled from "styled-components";
+import { GoRepo, GoGist } from "react-icons/go";
+import { FiUsers, FiUserPlus } from "react-icons/fi";
 
 const UserInfo = () => {
-  const { gitHubUser } = React.useContext(GithubContext)
+  const { gitHubUser } = React.useContext(GithubContext);
   // console.log(gitHubUser)
-  const { public_repos, followers, following, public_gists } = gitHubUser
+  const { public_repos, followers, following, public_gists } = gitHubUser;
   // console.log(public_repos, followers, following, public_gists)
 
   const githubItems = [
     {
       id: 1,
-      label: 'repos',
-      icon: <GoRepo className='icons' />,
+      label: "repos",
+      icon: <GoRepo className="icons" />,
       value: public_repos,
-      style: 'pink',
+      style: "pink",
     },
     {
       id: 2,
-      label: 'followers',
-      icon: <FiUsers className='icons' />,
+      label: "followers",
+      icon: <FiUsers className="icons" />,
       value: followers,
-      style: 'green',
+      style: "green",
     },
     {
       id: 3,
-      label: 'following',
-      icon: <FiUserPlus className='icons' />,
+      label: "following",
+      icon: <FiUserPlus className="icons" />,
       value: following,
-      style: 'purple',
+      style: "purple",
     },
     {
       id: 4,
-      label: 'gists',
-      icon: <GoGist className='icons' />,
+      label: "gists",
+      icon: <GoGist className="icons" />,
       value: public_gists,
-      style: 'yellow',
+      style: "yellow",
     },
-  ]
+  ];
   return (
-    <section className='section'>
-      <Wrapper className='section-center'>
+    <section className="section">
+      <Wrapper className="section-center">
         {githubItems.map((items) => {
-          return <Item key={items.id} {...items} />
+          return <Item key={items.id} {...items} />;
         })}
       </Wrapper>
     </section>
-  )
-}
+  );
+};
 
 const Item = ({ label, icon, value, style }) => {
   return (
-    <article className='item'>
+    <article className="item">
       <span className={style}>{icon}</span>
       <div>
         <h3>{value}</h3>
         <p>{label}</p>
       </div>
     </article>
-  )
-}
+  );
+};
 const Wrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -72,7 +72,7 @@ const Wrapper = styled.section`
   .item {
     border-radius: var(--radius);
     padding: 1rem 2rem;
-    background: var(--clr-white);
+    background: var(--card-background);
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 3rem;
@@ -90,6 +90,7 @@ const Wrapper = styled.section`
     h3 {
       margin-bottom: 0;
       letter-spacing: 0;
+      color: var(--card-color);
     }
     p {
       margin-bottom: 0;
@@ -112,6 +113,6 @@ const Wrapper = styled.section`
       color: #f0b429;
     }
   }
-`
+`;
 
-export default UserInfo
+export default UserInfo;

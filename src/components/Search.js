@@ -1,42 +1,42 @@
-import React from 'react'
-import styled from 'styled-components'
-import { MdSearch } from 'react-icons/md'
-import { GithubContext } from '../context/context'
+import React from "react";
+import styled from "styled-components";
+import { MdSearch } from "react-icons/md";
+import { GithubContext } from "../context/context";
 const Search = () => {
-  const [search, setSearch] = React.useState('')
+  const [search, setSearch] = React.useState("");
   const { request, error, searchGithubUser, loading } =
-    React.useContext(GithubContext)
+    React.useContext(GithubContext);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (search) {
-      searchGithubUser(search)
+      searchGithubUser(search);
     }
-  }
+  };
 
   return (
-    <section className='section'>
-      <Wrapper className='section-center'>
+    <section className="section">
+      <Wrapper className="section-center">
         <ErrorWrapper>
           <p>{error.msg}</p>
         </ErrorWrapper>
         <form onSubmit={handleSubmit}>
-          <div className='form-control'>
+          <div className="form-control">
             <MdSearch></MdSearch>
             <input
-              type='text'
-              placeholder='Enter Github User'
+              type="text"
+              placeholder="Enter Github User"
               onChange={(e) => setSearch(e.target.value)}
             />
-            {request > 0 && loading == false ? <button>Search</button> : null}
+            {request > 0 && loading === false ? <button>Search</button> : null}
           </div>
         </form>
         <h3>Request : {request}/60</h3>
       </Wrapper>
     </section>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   position: relative;
@@ -106,10 +106,10 @@ const Wrapper = styled.div`
     color: var(--clr-grey-5);
     font-weight: 400;
   }
-`
+`;
 const ErrorWrapper = styled.article`
   position: absolute;
-  width: 90vw;
+  width: 50vw;
   top: 0;
   left: 0;
   transform: translateY(-100%);
@@ -118,5 +118,5 @@ const ErrorWrapper = styled.article`
     color: red;
     letter-spacing: var(--spacing);
   }
-`
-export default Search
+`;
+export default Search;

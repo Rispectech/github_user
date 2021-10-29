@@ -1,12 +1,13 @@
-import React from 'react'
-import { GithubContext } from '../context/context'
-import styled from 'styled-components'
-import { MdBusiness, MdLocationOn, MdLink } from 'react-icons/md'
+import React from "react";
+import { GithubContext } from "../context/context";
+import styled from "styled-components";
+import { MdBusiness, MdLocationOn, MdLink } from "react-icons/md";
+import "react-loading-skeleton/dist/skeleton.css";
+
 const Card = () => {
-  const { gitHubUser } = React.useContext(GithubContext)
+  const { gitHubUser } = React.useContext(GithubContext);
   const {
     avatar_url,
-    login,
     bio,
     company,
     blog,
@@ -14,22 +15,22 @@ const Card = () => {
     location,
     name,
     twitter_username,
-  } = gitHubUser
+  } = gitHubUser;
   return (
     <Wrapper>
       <header>
         <img src={avatar_url} alt={name} />
         <div>
-          <h4>{name}</h4>
-          <p>@{twitter_username || 'john doe'}</p>
+          <h3>{name}</h3>
+          <p>@{twitter_username || "john doe"}</p>
         </div>
         <a href={html_url}>follow</a>
       </header>
-      <p className='bio'>{bio}</p>
-      <div className='links'>
+      <p className="bio">{bio}</p>
+      <div className="links">
         <p>
           <MdBusiness></MdBusiness>
-          {company}
+          {company || "No Affiliated Organisation"}
         </p>
         <p>
           <MdLocationOn></MdLocationOn>
@@ -37,26 +38,63 @@ const Card = () => {
         </p>
         <a href={`https://${blog}`}>
           <MdLink />
-          {blog}
+          {blog || ""}
         </a>
       </div>
     </Wrapper>
-  )
-}
+  );
+};
+
+// const UserSkeleton = () => {
+//   return (
+//     <Wrapper>
+//       <header>
+//         <Skeleton />
+//         <div>
+//           <h3>
+//             <Skeleton />
+//           </h3>
+//           <p>
+//             <Skeleton />
+//           </p>
+//         </div>
+//         <a>
+//           <Skeleton />
+//         </a>
+//       </header>
+//       <p className="bio">
+//         <Skeleton />
+//       </p>
+//       <div className="links">
+//         <p>
+//           <Skeleton />
+//         </p>
+//         <p>
+//           <Skeleton />
+//         </p>
+//         <a>
+//           <Skeleton />
+//         </a>
+//       </div>
+//     </Wrapper>
+//   );
+// };
 const Wrapper = styled.article`
-  background: var(--clr-white);
+  height: 20rem;
+  color: #f6f8fa;
+  background: #24292e;
   padding: 1.5rem 2rem;
   border-top-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   position: relative;
   &::before {
-    content: 'user';
+    content: "user";
     position: absolute;
     top: 0;
     left: 0;
     transform: translateY(-100%);
-    background: var(--clr-white);
+    background: #24292e;
     color: var(--clr-grey-5);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
@@ -72,19 +110,22 @@ const Wrapper = styled.article`
     column-gap: 1rem;
     margin-bottom: 1rem;
     img {
-      width: 75px;
-      height: 75px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
+      border: 0.1rem solid #0070f3;
     }
-    h4 {
+    h3 {
       margin-bottom: 0.25rem;
     }
     p {
+      color: #c8e1ff;
+      font-size: 1rem;
       margin-bottom: 0;
     }
     a {
       color: var(--clr-primary-5);
-      border: 1px solid var(--clr-primary-5);
+      border: 2px solid var(--clr-primary-5);
       padding: 0.25rem 0.75rem;
       border-radius: 1rem;
       text-transform: capitalize;
@@ -98,11 +139,12 @@ const Wrapper = styled.article`
     }
   }
   .bio {
-    color: var(--clr-grey-3);
+    color: #c8e1ff;
   }
   .links {
     p,
     a {
+      color: #c8e1ff;
       margin-bottom: 0.25rem;
       display: flex;
       align-items: center;
@@ -122,5 +164,5 @@ const Wrapper = styled.article`
       }
     }
   }
-`
-export default Card
+`;
+export default Card;

@@ -5,7 +5,7 @@ import styled from "styled-components";
 function AuthWrapper({ children }) {
   const { isLoading, error, user, isAuthenticated } = useAuth0();
   if (isLoading) {
-    console.log("Loading");
+    // console.log("Loading");
     return (
       <Wrapper>
         <img src={loadingGif} alt="spinner" />
@@ -18,7 +18,7 @@ function AuthWrapper({ children }) {
       </Wrapper>
     );
   } else {
-    console.log("esle", user, isAuthenticated);
+    // console.log("esle", user, isAuthenticated);
     return <>{children}</>;
   }
 }

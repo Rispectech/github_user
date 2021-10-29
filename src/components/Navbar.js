@@ -3,11 +3,10 @@ import styled from "styled-components";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const { loginWithRedirect, logout, isLoading, user, isAuthenticated } =
-    useAuth0();
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
 
   const isUser = isAuthenticated;
-  console.log(user);
+  // console.log(user);
   return (
     <Wrapper>
       {isUser && user.picture && <img src={user.picture} alt={user.name} />}
@@ -28,7 +27,6 @@ const Navbar = () => {
 
 const Wrapper = styled.nav`
   padding: 1.5rem;
-  margin-bottom: 4rem;
   background: var(--clr-white);
   text-align: center;
   display: grid;

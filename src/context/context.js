@@ -61,15 +61,15 @@ const GithubProvider = ({ children }) => {
       //   .then((item) => setGitHubFollowers(item.data))
       //   .catch((err) => console.log(err))
       await Promise.allSettled([
-        axios(`${rootUrl}/users/${login}/repos?per_page = 100`),
+        axios(`${rootUrl}/users/${login}/repos?per_page=100`),
         axios(`${followers_url}?per_page=100`),
       ]).then((result) => {
         console.log(result);
         const [repos, followers] = result;
         // console.log(repos.value.data, followers.value.data);
 
-        if (repos.status == "fulfilled") setRepos(repos.value.data);
-        if (followers.status == "fulfilled")
+        if (repos.status === "fulfilled") setRepos(repos.value.data);
+        if (followers.status === "fulfilled")
           setGitHubFollowers(followers.value.data);
       });
     } else {
@@ -78,8 +78,9 @@ const GithubProvider = ({ children }) => {
         msg: "Any User with this Github Id doesn't exist",
       });
     }
-    console.log(request);
+    // console.log(request);
     // checkRequest()
+    console.log(repos);
     setLoading(false);
   };
 

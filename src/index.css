@@ -3,7 +3,7 @@
 Fonts
 ===============
 */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
 /*
 =============== 
@@ -43,15 +43,38 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
-  --ff-primary: 'Roboto', sans-serif;
-  --ff-secondary: 'Open Sans', sans-serif;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
+  --transition-updated: all 0.3s ease-in-out;
   --spacing: 0.1rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
+
+  /* changes */
+
+  --background: #121212;
+  --card-background: #24292e;
+  --card-color: #f6f8fa;
+  --repo-background: #3e065f;
+  --fade: #586069;
+  --gradient-start: #6366f1;
+  --gradient-end: #8b5cf6;
+  --card-gradient: linear-gradient(
+    to right,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  --text-gradient: -webkit-linear-gradient(
+    to right,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  --mr-1: 0.75rem;
+  --mr-2: 1.5rem;
 }
 /*
 =============== 
@@ -66,9 +89,10 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
+  background: var(--background);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -166,6 +190,12 @@ p {
   margin: 0 auto;
   max-width: 1170px;
 }
+
+.updated-section-center {
+  width: 90vw;
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 992px) {
   .section-center {
     width: 95vw;
@@ -178,6 +208,40 @@ p {
   margin: 0 auto;
   margin-top: 10rem;
 }
-main {
-  padding-bottom: 2rem;
+/* scrollbar */
+
+.followers::-webkit-scrollbar {
+  width: 0.1rem;
+}
+
+.followers::-webkit-scrollbar-track {
+  background: #24292e;
+}
+
+.followers::-webkit-scrollbar-thumb {
+  background-color: #c8e1ff;
+}
+
+.repos-background {
+  background-color: var(--background);
+}
+
+.margin-1 {
+  margin-right: var(--mr-1);
+}
+
+.margin-2 {
+  margin-right: var(--mr-2);
+}
+
+.margin-l-2 {
+  margin-left: var(--mr-2);
+}
+
+.background {
+  background-color: var(--background);
+}
+
+.card-gradient {
+  background: var(--card-gradient);
 }
