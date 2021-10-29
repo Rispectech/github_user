@@ -2,7 +2,6 @@ import React from "react";
 import { GithubContext } from "../context/context";
 import styled from "styled-components";
 import { MdBusiness, MdLocationOn, MdLink } from "react-icons/md";
-import "react-loading-skeleton/dist/skeleton.css";
 
 const Card = () => {
   const { gitHubUser } = React.useContext(GithubContext);
