@@ -79,12 +79,12 @@ const UserRepos = ({
   stargazers_count,
   forks,
   size,
+  html_url,
 }) => {
   // console.log(name, description, language, stargazers_count, forks, size);
+  // console.log(html_url);
   return (
-    <UserReposWrapper
-      onClick={() => (window.location.href = "http://www.w3schools.com")}
-    >
+    <UserReposWrapper onClick={() => (window.location.href = `${html_url}`)}>
       <div className="User-container">
         <div className="User-header">
           <GoRepo className="heading-icon" />
