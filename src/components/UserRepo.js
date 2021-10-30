@@ -22,6 +22,12 @@ const UserReposWrapper = styled.article`
       font-size: 12px;
       margin: 0.5rem 0;
       margin-bottom: 1rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      white-space: normal;
     }
   }
   .heading-icon {
